@@ -1,13 +1,7 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
+  --background: #f5f4ec;
+  --foreground: #1d3228;
 }
 
 html {
@@ -42,8 +36,40 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.success-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: #f5f4ec;
+  color: #1d3228;
+}
+.success-page section {
+  width: min(100%, 560px);
+  padding: 42px;
+  border: 1px solid #dce1d7;
+  border-radius: 8px;
+  background: #fffefa;
+}
+.success-eyebrow {
+  color: #c76c49;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.success-page h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.success-page section > p:not(.success-eyebrow) {
+  color: #64736a;
+  line-height: 1.7;
+}
+.success-page a {
+  color: #2f5c46;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
