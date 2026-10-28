@@ -18,16 +18,20 @@
   font-weight: 800;
   text-decoration: none;
 }
-.die {
-  display: grid;
-  width: 38px;
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1.5px solid #2f5c46;
-  border-radius: 8px;
-  color: #2f5c46;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
+.logoCrop {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  overflow: hidden;
+}
+.headerLogo {
+  position: absolute;
+  top: -40px;
+  left: -23px;
+  width: 108px;
+  max-width: none;
+  height: auto;
 }
 .wordmarkLight,
 .headerNote,

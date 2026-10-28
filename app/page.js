@@ -18,8 +18,14 @@ export default function HomePage() {
           href="/"
           aria-label="Meeples in D6 home"
         >
-          <span className={styles.die} aria-hidden="true">
-            D6
+          <span className={styles.logoCrop} aria-hidden="true">
+            <Image
+              className={styles.headerLogo}
+              src="/meeplesD6.svg"
+              alt=""
+              width={612}
+              height={792}
+            />
           </span>
           <span>
             Meeples <span className={styles.wordmarkLight}>in D6</span>
@@ -40,6 +46,7 @@ export default function HomePage() {
             alt="Meeples in D6 board game days poster featuring the venue, dice, and meeple logo"
             width={4032}
             height={2268}
+            loading="eager"
             sizes="(max-width: 780px) 100vw, 1160px"
           />
           <div className={styles.eventCopy}>
