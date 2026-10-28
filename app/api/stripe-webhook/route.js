@@ -39,14 +39,11 @@ export async function POST(request) {
         ? session.customer
         : session.customer?.id;
 
-    if (customerId) {
+    if (customerId && session.consent?.promotions) {
       try {
         await getStripe().customers.update(customerId, {
           metadata: {
-            marketing_consent:
-              session.consent?.promotions === "opt_in"
-                ? "opt_in"
-                : "not_opted_in",
+            marketing_consent: session.consent.promotions,
             marketing_consent_session_id: session.id,
             marketing_consent_recorded_at: new Date(
               session.created * 1000,

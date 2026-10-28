@@ -22,7 +22,6 @@ export async function POST() {
       automatic_tax: { enabled: false },
       allow_promotion_codes: false,
       submit_type: "pay",
-      consent_collection: { promotions: "auto" },
       name_collection: { individual: { enabled: true } },
       locale: "en",
       integration_identifier: "hosted_web_0001",
