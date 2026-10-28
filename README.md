@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Stripe checkout
+
+Create an active one-time Price for the event and set its ID as
+`STRIPE_PRICE_ID`. The app uses that Price for the product and currency while
+allowing attendees to choose their contribution amount. Create a separate
+active one-time Price with a $0 amount in the same currency, then set its ID as
+`STRIPE_ZERO_PRICE_ID`; zero-dollar registrations use this Price directly.
+Configure both variables in `.env` locally and in the deployment environment.
+
 ## Getting Started
 
 First, run the development server:

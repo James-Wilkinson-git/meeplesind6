@@ -42,7 +42,7 @@ export default function HomePage() {
         >
           <Image
             className={styles.eventImage}
-            src="/meeplesind6poster.jpg"
+            src="/meeplesind6poster.webp"
             alt="Meeples in D6 board game days poster featuring the venue, dice, and meeple logo"
             width={4032}
             height={2268}
@@ -126,8 +126,8 @@ export default function HomePage() {
               <p className={styles.eyebrow}>Admission</p>
               <h2>Pay what you can</h2>
               <p>
-                A $10 donation is suggested to help cover event costs. Choose
-                the amount that works for you when you register.
+                A $10 contribution is suggested to help cover event costs. Pay
+                what works for you, including $0, when you register.
               </p>
             </section>
             <section className={styles.infoSection}>

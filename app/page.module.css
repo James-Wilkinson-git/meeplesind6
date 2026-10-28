@@ -109,6 +109,48 @@
   width: min(100%, 360px);
   margin-top: 24px;
 }
+.contributionLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: #fffefa;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.contributionInput {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid rgb(255 254 250 / 55%);
+  border-radius: 4px;
+  background: #fffefa;
+  color: #1d3228;
+}
+.contributionInput span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.contributionInput input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+}
+.contributionInput:focus-within {
+  outline: 3px solid #fffefa;
+  outline-offset: 3px;
+}
+.contributionNote {
+  margin: 8px 0 16px;
+  color: rgb(255 254 250 / 80%);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
 .checkoutButton:focus-visible {
   outline: 3px solid #fffefa;
   outline-offset: 3px;
