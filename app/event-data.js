@@ -1,5 +1,5 @@
 export const eventData = {
-  date: "See AfterGame for this month's date",
+  date: "January",
   newReleases: [
     "Papyria (thanks to Capstone Games)",
     "The Great Harbor (thanks to Archona Games)",

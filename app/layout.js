@@ -1,4 +1,6 @@
 import "./globals.css";
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/ibm-plex-sans";
 
 export const metadata = {
   title: "Meeples in D6",

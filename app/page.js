@@ -35,25 +35,25 @@ export default function HomePage() {
       </header>
 
       <div className={styles.content}>
-        <section
-          className={styles.event}
-          id="registration"
-          aria-labelledby="event-title"
-        >
+        <section className={styles.event} aria-labelledby="event-title">
           <Image
             className={styles.eventImage}
             src="/meeplesind6poster.webp"
             alt="Meeples in D6 board game days poster featuring the venue, dice, and meeple logo"
-            width={4032}
-            height={2268}
-            loading="eager"
-            sizes="(max-width: 780px) 100vw, 1160px"
+            width={1600}
+            height={900}
+            preload
+            sizes="(max-width: 420px) min(380px, calc(100vw - 24px)), (max-width: 780px) min(540px, calc(100vw - 32px)), (max-width: 1207px) calc(100vw - 420px), 788px"
           />
           <div className={styles.eventCopy}>
             <p className={styles.eyebrow}>
               <span className={styles.dot} /> Community game night
             </p>
             <h1 id="event-title">Calling all board game enthusiasts!</h1>
+            <p className={styles.eventDate}>
+              <span>Next game day</span>
+              <strong>{eventData.date}</strong>
+            </p>
             <p className={styles.description}>
               Whether you&apos;re a strategic mastermind or just love a good
               game day with friends, Meeples in D6 is the place to be. Spend a
@@ -64,14 +64,24 @@ export default function HomePage() {
               We have so many new titles for you to explore, including some that
               have not even arrived yet.
             </p>
-            <div className={styles.eventCheckout}>
-              <CheckoutForm />
-              <p className={styles.eventPaymentNote}>
-                Secure payment powered by Stripe
-              </p>
-            </div>
           </div>
         </section>
+
+        <aside
+          className={styles.registration}
+          id="registration"
+          aria-labelledby="registration-title"
+        >
+          <p className={styles.eyebrow}>Registration</p>
+          <h2 id="registration-title">Reserve your seat</h2>
+          <p className={styles.checkoutIntro}>
+            Enter your contact details and choose what you can contribute.
+          </p>
+          <CheckoutForm />
+          <p className={styles.eventPaymentNote}>
+            Secure checkout powered by Stripe
+          </p>
+        </aside>
 
         <section className={styles.information} aria-label="Event information">
           <section className={styles.infoSection}>
@@ -114,14 +124,6 @@ export default function HomePage() {
           </section>
 
           <div className={styles.infoColumns}>
-            <section className={styles.infoSection}>
-              <p className={styles.eyebrow}>Good to know</p>
-              <h2>Costumes</h2>
-              <p>
-                It&apos;s Halloween! Feel free to dress up. Bonus points for
-                board-game-themed costumes.
-              </p>
-            </section>
             <section className={styles.infoSection}>
               <p className={styles.eyebrow}>Admission</p>
               <h2>Pay what you can</h2>

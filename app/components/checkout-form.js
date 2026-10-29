@@ -4,6 +4,8 @@ import { useState } from "react";
 import styles from "../page.module.css";
 
 export default function CheckoutForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("10.00");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -17,7 +19,7 @@ export default function CheckoutForm() {
       const response = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount }),
+        body: JSON.stringify({ name, email, amount }),
       });
       const result = await response.json();
       if (!response.ok)
@@ -33,6 +35,30 @@ export default function CheckoutForm() {
 
   return (
     <form onSubmit={startCheckout}>
+      <label className={styles.contactField}>
+        <span>Name</span>
+        <input
+          autoComplete="name"
+          maxLength={150}
+          name="name"
+          onChange={(event) => setName(event.target.value)}
+          required
+          type="text"
+          value={name}
+        />
+      </label>
+      <label className={styles.contactField}>
+        <span>Email</span>
+        <input
+          autoComplete="email"
+          maxLength={254}
+          name="email"
+          onChange={(event) => setEmail(event.target.value)}
+          required
+          type="email"
+          value={email}
+        />
+      </label>
       <label className={styles.contributionLabel} htmlFor="contribution-amount">
         Your contribution
       </label>
@@ -45,7 +71,10 @@ export default function CheckoutForm() {
           max="999999.99"
           step="0.01"
           value={amount}
-          onChange={(event) => setAmount(event.target.value)}
+          onChange={(event) => {
+            setAmount(event.target.value);
+            setError("");
+          }}
           aria-describedby="contribution-note"
           required
         />

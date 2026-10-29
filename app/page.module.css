@@ -8,13 +8,13 @@
   min-height: 82px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #dce1d7;
+  border-bottom: 1px solid var(--line);
 }
 .wordmark {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  color: #1d3228;
+  color: var(--foreground);
   font-weight: 800;
   text-decoration: none;
 }
@@ -36,23 +36,23 @@
 .wordmarkLight,
 .headerNote,
 .footer {
-  color: #64736a;
+  color: var(--muted);
 }
 .headerNote {
   font-size: 0.85rem;
 }
 .content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
+  gap: 32px;
   align-items: start;
   padding: 48px 0 64px;
 }
 .event {
   overflow: hidden;
   border-radius: 8px;
-  background: #2f5c46;
-  color: #fffefa;
+  background: var(--primary);
+  color: var(--surface);
 }
 .eventImage {
   display: block;
@@ -67,13 +67,13 @@
   align-items: center;
   gap: 8px;
   margin: 0 0 14px;
-  color: #c76c49;
+  color: var(--accent);
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 .event .eyebrow {
-  color: #fffefa;
+  color: var(--surface);
 }
 .dot {
   width: 7px;
@@ -84,35 +84,46 @@
 .event h1,
 .registration h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: 0;
 }
 .event h1 {
   max-width: 760px;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 3.5rem;
   line-height: 0.99;
 }
 .description {
   max-width: 760px;
   margin: 19px 0 0;
-  color: rgb(255 254 250 / 80%);
+  color: rgb(255 254 250 / 82%);
   font-size: 0.98rem;
   line-height: 1.7;
 }
 .eventDate {
-  margin: 24px 0 0;
-  color: #fffefa;
-  font-size: 1rem;
+  display: grid;
+  gap: 5px;
+  margin: 22px 0 0;
+  padding-left: 14px;
+  border-left: 4px solid var(--gold);
 }
-.eventCheckout {
-  width: min(100%, 360px);
-  margin-top: 24px;
+.eventDate span {
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.eventDate strong {
+  color: var(--surface);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
 }
 .contributionLabel {
   display: block;
   margin-bottom: 8px;
-  color: #fffefa;
+  color: var(--foreground);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -124,8 +135,8 @@
   padding: 0 14px;
   border: 1px solid rgb(255 254 250 / 55%);
   border-radius: 4px;
-  background: #fffefa;
-  color: #1d3228;
+  background: var(--surface);
+  color: var(--foreground);
 }
 .contributionInput span {
   font-size: 1rem;
@@ -142,22 +153,42 @@
   font-size: 1rem;
 }
 .contributionInput:focus-within {
-  outline: 3px solid #fffefa;
+  outline: 3px solid var(--surface);
   outline-offset: 3px;
 }
 .contributionNote {
   margin: 8px 0 16px;
-  color: rgb(255 254 250 / 80%);
+  color: var(--muted);
   font-size: 0.8rem;
   line-height: 1.5;
 }
-.checkoutButton:focus-visible {
-  outline: 3px solid #fffefa;
-  outline-offset: 3px;
+.contactField {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 16px;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.contactField input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid #aab9b5;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-weight: 400;
+}
+.contactField input:focus-visible,
+.contributionInput:focus-within {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 .eventPaymentNote {
-  margin-top: 9px;
-  color: #fffefa;
+  margin: 14px 0 0;
+  color: var(--muted);
   font-size: 0.78rem;
 }
 .afterGame {
@@ -168,15 +199,16 @@
 .information {
   display: grid;
   gap: 36px;
+  grid-column: 1;
 }
 .infoSection {
   padding-bottom: 30px;
-  border-bottom: 1px solid #dce1d7;
+  border-bottom: 1px solid var(--line);
 }
 .infoSection h2 {
   margin: 0 0 12px;
-  color: #1d3228;
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--foreground);
+  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 500;
 }
@@ -184,7 +216,7 @@
 .travelColumns p {
   max-width: 850px;
   margin: 0 0 12px;
-  color: #48584e;
+  color: var(--copy);
   font-size: 0.94rem;
   line-height: 1.75;
 }
@@ -200,6 +232,7 @@
 }
 .infoColumns {
   margin-top: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .infoColumns .infoSection {
   padding: 0 0 24px;
@@ -210,7 +243,7 @@
 .gameLists h3,
 .travelColumns h3 {
   margin: 0 0 12px;
-  color: #2f5c46;
+  color: var(--primary);
   font-size: 0.92rem;
 }
 .gameLists ul {
@@ -218,7 +251,7 @@
   gap: 8px;
   margin: 0;
   padding-left: 19px;
-  color: #48584e;
+  color: var(--copy);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -226,15 +259,15 @@
   margin-top: 22px;
 }
 .textLink {
-  color: #2f5c46;
+  color: var(--primary);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .fraudAlert {
   padding: 16px 18px;
-  border-left: 3px solid #c76c49;
-  background: #f0eee3;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
 }
 .details {
   display: grid;
@@ -242,14 +275,14 @@
   gap: 22px 18px;
   margin: 32px 0 0;
   padding-top: 25px;
-  border-top: 1px solid rgb(255 254 250 / 22%);
+  border-top: 1px solid rgb(251 252 248 / 34%);
 }
 .details div:last-child {
   grid-column: 1 / -1;
 }
 .details dt {
   margin-bottom: 7px;
-  color: #d1ddcf;
+  color: var(--soft-green);
   font-size: 0.71rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -262,27 +295,38 @@
 }
 .details dd span {
   padding: 0 4px;
-  color: #f2b18e;
+  color: var(--gold);
 }
 .registration {
+  position: sticky;
+  top: 24px;
+  grid-column: 2;
+  grid-row: 1;
   width: 100%;
-  max-width: 660px;
-  justify-self: center;
-  padding: 32px;
-  border: 1px solid #dce1d7;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--accent);
   border-radius: 6px;
-  background: #fffefa;
-  color: #1d3228;
+  background: var(--surface);
+  color: var(--foreground);
 }
 .registration h2 {
-  font-size: 2.45rem;
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 500;
   line-height: 1.1;
 }
 .checkoutIntro {
-  margin: 12px 0 22px;
-  color: #64736a;
+  margin: 10px 0 20px;
+  color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.6;
+}
+.registration .eyebrow {
+  margin-bottom: 10px;
+  color: var(--primary-dark);
 }
 .checkoutButton {
   display: block;
@@ -290,34 +334,38 @@
   min-height: 52px;
   border: 0;
   border-radius: 4px;
-  background: #1d3228;
-  color: #fffefa;
+  background: var(--primary-dark);
+  color: var(--surface);
   font: inherit;
   font-weight: 800;
   cursor: pointer;
 }
 .checkoutButton:hover:not(:disabled) {
-  background: #12251a;
+  background: #043f3d;
 }
 .checkoutButton:disabled {
   cursor: wait;
   opacity: 0.72;
 }
+.checkoutButton:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
 .status {
   margin-top: 12px;
-  color: #64736a;
+  color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.5;
 }
 .error {
-  color: #a62e24;
+  color: var(--danger);
 }
 .event .error {
   padding: 12px 14px;
-  border-left: 4px solid #8b1e1e;
+  border-left: 4px solid var(--danger);
   border-radius: 4px;
-  background: #fffefa;
-  color: #8b1e1e;
+  background: var(--surface);
+  color: var(--danger);
   font-weight: 700;
 }
 .footer {
@@ -326,7 +374,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  border-top: 1px solid #dce1d7;
+  border-top: 1px solid var(--line);
   font-size: 0.79rem;
 }
 @keyframes arrive {
@@ -344,16 +392,28 @@
     width: min(100% - 32px, 540px);
   }
   .content {
+    grid-template-columns: minmax(0, 1fr);
     gap: 34px;
     padding: 32px 0 46px;
   }
+  .event h1 {
+    font-size: 3rem;
+  }
   .registration {
-    max-width: none;
+    position: static;
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .information {
+    grid-column: 1;
   }
   .infoColumns,
   .gameLists,
   .travelColumns {
     gap: 24px;
+  }
+  .infoColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 420px) {
@@ -368,6 +428,12 @@
   }
   .eventCopy {
     padding: 26px 22px 28px;
+  }
+  .event h1 {
+    font-size: 2.5rem;
+  }
+  .eventDate strong {
+    font-size: 1.65rem;
   }
   .infoColumns,
   .gameLists,
