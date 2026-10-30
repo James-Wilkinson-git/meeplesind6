@@ -12,8 +12,6 @@ export const eventData = {
     "Wingspan Pocket",
     "Wine and Cheese",
     "Wondrous Creatures with the new Winterfall Expansion",
-  ],
-  spookyGames: [
     "Carnival of Sins",
     "Courtisans",
     "Deep Regrets",

@@ -31,7 +31,9 @@ export default function HomePage() {
             Meeples <span className={styles.wordmarkLight}>in D6</span>
           </span>
         </Link>
-        <span className={styles.headerNote}>A seat at the table</span>
+        <span className={styles.headerNote}>
+          Board Game Events in Toronto, Canada
+        </span>
       </header>
 
       <div className={styles.content}>
@@ -61,9 +63,14 @@ export default function HomePage() {
               discover new favorites.
             </p>
             <p className={styles.description}>
-              We have so many new titles for you to explore, including some that
-              have not even arrived yet.
+              We love showcasing the newest releases and hidden gems, so
+              you&apos;ll always find something fresh to play. Our events are
+              designed for hobby board gamers who enjoy strategic thinking, from
+              relaxing short games to long, three-hour brain burners. We offer a
+              laid-back, lower-noise environment. These events are not aimed at
+              beginners or people looking primarily for party games.
             </p>
+            <p className={styles.description}></p>
           </div>
         </section>
 
@@ -75,7 +82,8 @@ export default function HomePage() {
           <p className={styles.eyebrow}>Registration</p>
           <h2 id="registration-title">Reserve your seat</h2>
           <p className={styles.checkoutIntro}>
-            Enter your contact details and choose what you can contribute.
+            Enter your contact details and choose what you can contribute, you
+            can pay $0 if you wish or plan on contributing at the door.
           </p>
           <CheckoutForm />
           <p className={styles.eventPaymentNote}>
@@ -99,10 +107,7 @@ export default function HomePage() {
           <section className={styles.infoSection}>
             <p className={styles.eyebrow}>This month</p>
             <h2>Game library</h2>
-            <p>
-              This month we&apos;re featuring new releases and spooky titles for
-              Halloween.
-            </p>
+            <p>This month we&apos;re featuring these new releases:</p>
             <div className={styles.gameLists}>
               <div>
                 <h3>New releases</h3>
@@ -112,17 +117,8 @@ export default function HomePage() {
                   ))}
                 </ul>
               </div>
-              <div>
-                <h3>Spooky vibes</h3>
-                <ul>
-                  {eventData.spookyGames.map((game) => (
-                    <li key={game}>{game}</li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </section>
-
           <div className={styles.infoColumns}>
             <section className={styles.infoSection}>
               <p className={styles.eyebrow}>Admission</p>
@@ -137,16 +133,17 @@ export default function HomePage() {
               <h2>Bring and buy</h2>
               <p>
                 We&apos;re not quite big enough to host one yet, but we hope to
-                in the future.
+                in the future. We now also have the occasional MATH trade!
               </p>
             </section>
             <section className={styles.infoSection}>
               <p className={styles.eyebrow}>Food and drink</p>
               <h2>Refreshments</h2>
               <p>
-                Coke Zero and candy bars are available for a $1 donation. There
-                are lots of lunch and dinner options nearby, as well as delivery
-                to the lobby.
+                Coke Zero and snacks are available for a $1 donation. There are
+                lots of lunch and dinner options nearby, as well as delivery to
+                the lobby. There is also a fridge and microwave available for
+                attendees to use.
               </p>
             </section>
           </div>
@@ -157,16 +154,15 @@ export default function HomePage() {
             <p>
               The event is in a large private condo party room. Only registered
               attendees can enter, so please register ahead of time. If you plan
-              to donate at the door instead, RSVP on AfterGame so we can plan
-              the room setup.
+              to donate at the door instead please register at $0.
             </p>
             <div className={styles.travelColumns}>
               <div>
                 <h3>By TTC</h3>
                 <p>
                   College, Wellesley, and Sherbourne stations are about 1 km
-                  away. Nearby service includes the 511 Carlton streetcar,
-                  Sherbourne streetcar stops, and the Sherbourne bus.
+                  away. Nearby service includes the 511 Carlton streetcar and
+                  the Sherbourne bus.
                 </p>
               </div>
               <div>
@@ -185,9 +181,8 @@ export default function HomePage() {
             <h2>Accessibility and entrance</h2>
             <p>
               The venue is wheelchair accessible, with outdoor space for a
-              sensory break and a smaller library next to the room. Toronto
-              automatic door buttons are sometimes out of order; message James
-              for assistance or other accommodations.
+              sensory break and a smaller library next to the room, message
+              James for assistance or other accommodations.
             </p>
             <p>
               My partner will be at the condo door for the first hour. After
